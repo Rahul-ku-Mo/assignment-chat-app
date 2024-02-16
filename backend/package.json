@@ -11,8 +11,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "build": "babel app.js -d dist"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "\"express",
@@ -26,6 +25,6 @@
     "@babel/preset-env": "^7.23.9"
   },
   "bin": {
-    "execute": "index.js"
+    "execute": "app.js"
   }
 }
