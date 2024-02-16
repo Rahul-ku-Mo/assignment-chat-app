@@ -11,12 +11,18 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "build": "babel app.js -d dist"
   },
   "keywords": [
     "\"express",
     "socket.io\""
   ],
   "author": "Rahul KM",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9"
+  }
 }
