@@ -2,11 +2,13 @@ const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
+const socketController = require("./controllers/socketController");
 
 const app = express();
-
+//for cross origin
 app.use(cors());
 
+//for server creation
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
@@ -14,19 +16,10 @@ const io = new Server(httpServer, {
   },
 });
 
-io.on("connection", (socket) => {
-  
-  socket.on("send-message", (data) => {
-    io.emit("receive-message", data); // Broadcast the message to all clients
-  });
+//for socket instance
+socketController(io);
 
-
-  socket.on("disconnect", () => {
-    console.log("Client disconnected");
-  });
-
-
-});
+//for server listen
 httpServer.listen(8000);
 
 module.exports = app;

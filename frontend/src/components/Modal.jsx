@@ -30,7 +30,7 @@ const Modal = () => {
           <div className="flex flex-col items-center gap-2 w-full max-w-sm">
             <label className="text-2xl font-bold">Who are you?</label>
             <input
-              className="outline-none p-2 rounded-md mx-2 text-sm bg-slate-600 w-full max-w-sm"
+              className="outline-none p-2 rounded-md mx-2 text-sm bg-slate-600 w-full max-w-sm focus:outline focus:outline-white"
               type="text"
               value={username}
               onChange={handleUsernameChange}
